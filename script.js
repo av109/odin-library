@@ -25,6 +25,11 @@ function addBookToLibrary(name, author, pages, isRead) {
   myLibrary.push(book);
 }
 
+function deleteBook(id){
+    myLibrary = myLibrary.filter(book => book.id !== id)
+    displayBooks();
+}
+
 function displayBooks() {
   container.innerHTML = "";
   myLibrary.map((book) => {
@@ -46,8 +51,24 @@ function displayBooks() {
       book.toggleRead();
       displayBooks();
     });
+    const deleteButton = div.querySelector(".delete-book")
+    deleteButton.addEventListener("click", () => { 
+        deleteBook(book.id);
+     })
   });
 }
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = document.querySelector("#name").value;
+  const page = document.querySelector("#pages").value;
+  const author = document.querySelector("#author").value;
+  const read = document.querySelector("#read").checked;
+
+  addBookToLibrary(name, author, parseInt(page, 4), read)
+  displayBooks();
+  modal.close();
+});
 
 openButton.addEventListener("click", () => {
   modal.showModal();
