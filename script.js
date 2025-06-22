@@ -37,8 +37,8 @@ function displayBooks() {
     div.classList.add("card");
     div.innerHTML = `
       <h3 class="title">${book.name}</h3>
-      <p class="author">by ${book.author}</p>
-      <p class="pages">${book.pages} pages</p>
+      <p class="author">by <span>${book.author}</span></p>
+      <p class="pages"> <span>${book.pages}</span> pages</p>
       <p class="isread">${book.isRead ? "Completed" : "Not read now"}</p>
       <div class="actions">
         <button class="toggle-read">Toggle Read</button>

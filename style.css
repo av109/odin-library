@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.card {
+  width: 17em;
+  height: 17em;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(
+    30px 0%,
+    100% 0,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0 100%,
+    0% 30px
+  );
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 10px, auto;
+}
+
+.title {
+  font-family: "Bree Serif", serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  display: block;
+  /* font-size: 1em; */
+}
+
+.author {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: white;
+  display: block;
+}
+
+.author span {
+  font-family: "Bree Serif", serif;
+  font-weight: 500;
+}
+
+.pages {
+  color: white;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.pages span {
+  font-weight: bold;
+}
+
+.isread {
+  color: white;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.card button {
+  font-family: "Roboto", sans-serif;
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: 0.4s ease-in-out;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  /* margin-top: 30px; */
+}
