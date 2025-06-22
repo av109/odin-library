@@ -40,7 +40,12 @@ function displayBooks() {
         <button class="delete-book">Delete</button>
       </div>    
     `;
-    container.appendChild(div)
+    container.appendChild(div);
+    const readButton = div.querySelector(".toggle-read");
+    readButton.addEventListener("click", () => {
+      book.toggleRead();
+      displayBooks();
+    });
   });
 }
 
