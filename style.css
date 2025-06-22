@@ -9,6 +9,7 @@ body {
 .container {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -83,9 +84,96 @@ body {
   color: rgb(0, 0, 0);
   transition: 0.4s ease-in-out;
 }
+.card button:hover{
+    opacity: 0.7;
+}
 
 .actions {
   display: flex;
   gap: 1rem;
   /* margin-top: 30px; */
 }
+
+dialog {
+  width: 250px;
+  height: 420px;
+  padding: 0 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border-radius: 20px;
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark overlay */
+  /* backdrop-filter: blur(2px); */
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+dialog > *{
+ margin: 0;
+}
+
+.form-title {
+  font-family: "Bree Serif", serif;
+
+  font-size: 23px;
+  font-weight: 700;
+  color: #333;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#form div{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* justify-content: center; */
+}
+
+#form div input {
+  margin-top: 10px;
+  outline: 0;
+  background: rgb(255, 255, 255);
+  box-shadow: transparent 0px 0px 0px 1px inset;
+  padding: 0.6em;
+  border-radius: 14px;
+  border: 1px solid #333;
+  color: black;
+}
+
+.read-div{
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem;
+}
+
+.button-div{
+    flex-direction: row !important;
+    gap: 1rem;
+}
+
+.button-div button, .openbutton {
+  border: 0;
+  background: #111;
+  color: #fff;
+  /* padding: 0.68em; */
+  padding: 0.8em 1.7em;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.button-div button:hover, .openbutton:hover{
+  opacity: 0.8;
+} 
+

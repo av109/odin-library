@@ -25,9 +25,9 @@ function addBookToLibrary(name, author, pages, isRead) {
   myLibrary.push(book);
 }
 
-function deleteBook(id){
-    myLibrary = myLibrary.filter(book => book.id !== id)
-    displayBooks();
+function deleteBook(id) {
+  myLibrary = myLibrary.filter((book) => book.id !== id);
+  displayBooks();
 }
 
 function displayBooks() {
@@ -51,10 +51,10 @@ function displayBooks() {
       book.toggleRead();
       displayBooks();
     });
-    const deleteButton = div.querySelector(".delete-book")
-    deleteButton.addEventListener("click", () => { 
-        deleteBook(book.id);
-     })
+    const deleteButton = div.querySelector(".delete-book");
+    deleteButton.addEventListener("click", () => {
+      deleteBook(book.id);
+    });
   });
 }
 
@@ -65,8 +65,10 @@ form.addEventListener("submit", (event) => {
   const author = document.querySelector("#author").value;
   const read = document.querySelector("#read").checked;
 
-  addBookToLibrary(name, author, parseInt(page, 4), read)
+  addBookToLibrary(name, author, parseInt(page, 4), read);
   displayBooks();
+  form.reset();
+
   modal.close();
 });
 
